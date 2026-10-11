@@ -1,0 +1,23 @@
+[project]
+name = "testing-pytest"
+version = "0.1.0"
+description = "Робота 07.2: тестування з бібліотекою pytest"
+authors = [{ name = "Кушнір Андрій" }]
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^9.1.1"
+
+[tool.pytest.ini_options]
+testpaths = ["."]
+python_files = ["test_*.py"]
+# показувати кириличні id параметрів без \uXXXX-екранування
+disable_test_id_escaping_and_forfeit_all_rights_to_community_support = true
+markers = [
+    "unit: швидкі юніт-тести",
+    "slow: повільні тести",
+]

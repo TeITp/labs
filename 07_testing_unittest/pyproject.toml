@@ -1,0 +1,10 @@
+[project]
+name = "testing-unittest"
+version = "0.1.0"
+description = "Робота 07.1: загальне тестування та юніт-тести (unittest)"
+authors = [{ name = "Кушнір Андрій" }]
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.poetry]
+package-mode = false
