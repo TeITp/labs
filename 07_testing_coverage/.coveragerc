@@ -1,0 +1,13 @@
+[run]
+source = .
+branch = true
+
+[report]
+show_missing = true
+omit =
+    test_*.py
+    conftest.py
+    */tests/*
+    */__init__.py
+    */.venv/*
+    */examples/*

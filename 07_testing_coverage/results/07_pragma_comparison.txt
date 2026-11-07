@@ -1,0 +1,48 @@
+До виключення
+$ python -m coverage erase
+
+Exit code: 0
+$ python -m coverage run --branch --source=entry_point -m pytest test_entry_point.py
+============================= test session starts ==============================
+platform darwin -- Python 3.13.13, pytest-9.1.1, pluggy-1.7.0
+rootdir: /private<temporary-directory>
+plugins: cov-7.1.0
+collected 1 item
+
+test_entry_point.py .                                                    [100%]
+
+============================== 1 passed in 0.01s ===============================
+
+Exit code: 0
+$ python -m coverage report -m
+Name             Stmts   Miss Branch BrPart  Cover   Missing
+------------------------------------------------------------
+entry_point.py       5      1      2      1    71%   10
+------------------------------------------------------------
+TOTAL                5      1      2      1    71%
+
+Exit code: 0
+Після виключення
+$ python -m coverage erase
+
+Exit code: 0
+$ python -m coverage run --branch --source=entry_point -m pytest test_entry_point.py
+============================= test session starts ==============================
+platform darwin -- Python 3.13.13, pytest-9.1.1, pluggy-1.7.0
+rootdir: /private<temporary-directory>
+plugins: cov-7.1.0
+collected 1 item
+
+test_entry_point.py .                                                    [100%]
+
+============================== 1 passed in 0.01s ===============================
+
+Exit code: 0
+$ python -m coverage report -m
+Name             Stmts   Miss Branch BrPart  Cover   Missing
+------------------------------------------------------------
+entry_point.py       3      0      0      0   100%
+------------------------------------------------------------
+TOTAL                3      0      0      0   100%
+
+Exit code: 0

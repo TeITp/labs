@@ -1,0 +1,21 @@
+$ python -m pytest examples/test_call_only.py --cov=app --cov-report=term-missing
+============================= test session starts ==============================
+platform darwin -- Python 3.13.13, pytest-9.1.1, pluggy-1.7.0
+rootdir: /Users/teexcy/Desktop/labs/07_testing_coverage
+configfile: pyproject.toml
+plugins: cov-7.1.0
+collected 1 item
+
+examples/test_call_only.py .                                             [100%]
+
+================================ tests coverage ================================
+______________ coverage: platform darwin, python 3.13.13-final-0 _______________
+
+Name     Stmts   Miss Branch BrPart  Cover   Missing
+----------------------------------------------------
+app.py      14      2      4      2    78%   13, 16
+----------------------------------------------------
+TOTAL       14      2      4      2    78%
+============================== 1 passed in 0.02s ===============================
+
+Exit code: 0

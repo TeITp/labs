@@ -1,0 +1,24 @@
+$ python -m pytest test_app.py --cov=app --cov-report=term-missing --cov-fail-under=90
+============================= test session starts ==============================
+platform darwin -- Python 3.13.13, pytest-9.1.1, pluggy-1.7.0
+rootdir: /Users/teexcy/Desktop/labs/07_testing_coverage
+configfile: pyproject.toml
+plugins: cov-7.1.0
+collected 4 items
+
+test_app.py ....
+ERROR: Coverage failure: total of 89 is less than fail-under=90
+                                                                         [100%]
+
+================================ tests coverage ================================
+______________ coverage: platform darwin, python 3.13.13-final-0 _______________
+
+Name     Stmts   Miss Branch BrPart  Cover   Missing
+----------------------------------------------------
+app.py      14      1      4      1    89%   16
+----------------------------------------------------
+TOTAL       14      1      4      1    89%
+FAIL Required test coverage of 90% not reached. Total coverage: 88.89%
+============================== 4 passed in 0.02s ===============================
+
+Exit code: 1

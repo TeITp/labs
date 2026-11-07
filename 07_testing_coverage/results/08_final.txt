@@ -1,0 +1,27 @@
+$ python -m pytest --cov=app --cov-branch --cov-report=term-missing --cov-report=html --cov-report=xml --cov-fail-under=90
+============================= test session starts ==============================
+platform darwin -- Python 3.13.13, pytest-9.1.1, pluggy-1.7.0
+rootdir: /Users/teexcy/Desktop/labs/07_testing_coverage
+configfile: pyproject.toml
+testpaths: .
+plugins: cov-7.1.0
+collected 13 items
+
+test_app.py ....                                                         [ 30%]
+test_extra.py ...                                                        [ 53%]
+test_unittest.py ......                                                  [100%]
+
+================================ tests coverage ================================
+______________ coverage: platform darwin, python 3.13.13-final-0 _______________
+
+Name     Stmts   Miss Branch BrPart  Cover   Missing
+----------------------------------------------------
+app.py      14      0      4      0   100%
+----------------------------------------------------
+TOTAL       14      0      4      0   100%
+Coverage HTML written to dir htmlcov
+Coverage XML written to file coverage.xml
+Required test coverage of 90% reached. Total coverage: 100.00%
+============================== 13 passed in 0.03s ==============================
+
+Exit code: 0
