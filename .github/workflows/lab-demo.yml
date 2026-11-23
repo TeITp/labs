@@ -21,7 +21,8 @@ jobs:
       - name: Print event
         env:
           EVENT_NAME: ${{ github.event_name }}
-        run: printf 'Event: %s\n' "$EVENT_NAME"
+        run: |
+          printf 'Event: %s\n' "$EVENT_NAME"
 
   demo:
     name: Run previous Python lab
