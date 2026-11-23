@@ -1,0 +1,15 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.0, pytest-9.2.0, pluggy-1.7.0
+cachedir: .pytest_cache
+collecting ... collected 8 items
+
+07_testing_integration/test_app.py::test_create_task PASSED              [ 12%]
+07_testing_integration/test_app.py::test_get_tasks PASSED                [ 25%]
+07_testing_integration/test_app.py::test_create_task_requires_title PASSED [ 37%]
+07_testing_integration/test_app.py::test_export_empty_tasks PASSED       [ 50%]
+07_testing_integration/test_app.py::test_export_replaces_corrupted_json PASSED [ 62%]
+07_testing_integration/test_app.py::test_tasks_are_stored_in_creation_order PASSED [ 75%]
+07_testing_integration/test_app.py::test_delete_task PASSED              [ 87%]
+07_testing_integration/test_app.py::test_delete_missing_task PASSED      [100%]
+
+============================== 8 passed in 0.09s ===============================

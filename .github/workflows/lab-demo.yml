@@ -1,0 +1,35 @@
+name: Lab demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_demo:
+        description: 'Run the previous Python lab'
+        type: boolean
+        default: false
+  schedule:
+    - cron: '30 14 * * 3'
+
+permissions:
+  contents: read
+
+jobs:
+  trigger:
+    name: Show trigger
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print event
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: printf 'Event: %s\n' "$EVENT_NAME"
+
+  demo:
+    name: Run previous Python lab
+    if: github.event_name == 'schedule' || inputs.run_demo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python 08_github_actions/lab.py

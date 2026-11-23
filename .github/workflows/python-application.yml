@@ -1,0 +1,45 @@
+name: Python application
+
+on:
+  push:
+    paths:
+      - '07_testing_integration/**'
+      - '07_testing_pytest/app.py'
+      - '08_github_actions/lab.py'
+      - '.github/workflows/python-application.yml'
+  pull_request:
+    paths:
+      - '07_testing_integration/**'
+      - '07_testing_pytest/app.py'
+      - '08_github_actions/lab.py'
+      - '.github/workflows/python-application.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  integration-tests:
+    name: Flask integration tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install dependencies
+        run: python -m pip install -r 07_testing_integration/requirements.txt flake8
+      - name: Lint Python
+        run: flake8 07_testing_integration 08_github_actions/lab.py --select=E9,F63,F7,F82
+      - name: Run pytest
+        run: python -m pytest -v 07_testing_integration
+
+  previous-lab:
+    name: Run previous Python lab
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Run Python
+        run: python 08_github_actions/lab.py
